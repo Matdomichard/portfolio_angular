@@ -1,0 +1,60 @@
+.floating-menu {
+  font-family: "azo-sans-web", sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 2.5;
+  position: fixed;
+  z-index: 15;
+  top: 3%;
+  right: 3%;
+  color: #272623;
+  display: flex;
+}
+
+.menu_box {
+  background-color: #ccbc87;
+  padding: 0 15px;
+  float: left;
+  border: solid;
+  border-width: 2px;
+  border-color: #272623;
+  transition: 1s;
+  text-decoration: none;
+  color: #272623;
+}
+
+.menu_intro,
+.menu_session,
+.menu_timetable {
+  margin-right: -2px;
+}
+
+.menu_intro {
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  padding-left: 19px;
+}
+
+.menu_about {
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  padding-right: 19px;
+}
+
+.menu_box:hover {
+  background-color: #b39b78;
+  color: #fff;
+}
+
+.menu_box.rotate {
+  animation: rotateAnimation 2s forwards;
+}
+
+@keyframes rotateAnimation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

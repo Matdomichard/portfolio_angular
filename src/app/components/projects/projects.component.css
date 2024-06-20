@@ -1,0 +1,34 @@
+.projects {
+  padding: 50px 20px;
+  /* background-color: #fff; */
+}
+
+.projects h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.project-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.project {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.project h3 {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.project p {
+  font-size: 1.2em;
+  color: #666;
+}
+
+.project a {
+  color: #007bff;
+  text-decoration: none;
+}
