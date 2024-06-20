@@ -5,7 +5,6 @@ import {
   QueryList,
   ViewChildren,
 } from '@angular/core';
-
 import { gsap } from 'gsap';
 
 @Component({
@@ -16,44 +15,26 @@ import { gsap } from 'gsap';
 export class TitleComponent implements AfterViewInit {
   @ViewChildren('logo') logos!: QueryList<ElementRef>;
 
-  companies = [
-    { name: 'Aquaring' },
-    { name: 'Accenture' },
-    { name: 'Adways' },
-    { name: 'CyberAgent' },
-    { name: 'Sansan' },
-    { name: 'CTW' },
-    { name: 'Safie' },
-    { name: 'Persol' },
-    { name: 'Bandai Namco' },
-    { name: 'Visional' },
-    { name: 'Money Forward' },
-    { name: 'Mixi' },
-    { name: 'Lifull' },
+  skills = [
+    { name: 'Java', icon: 'fab fa-java' },
+    { name: 'Spring', icon: 'fas fa-leaf' },
+    { name: 'JavaScript', icon: 'fab fa-js' },
+    { name: 'Angular', icon: 'fab fa-angular' },
+    { name: 'SQL', icon: 'fas fa-database' },
+    { name: 'HTML & CSS', icon: 'fab fa-html5' },
+    { name: 'React Native', icon: 'fab fa-react' },
+    { name: 'GitLab CI/CD', icon: 'fab fa-gitlab' },
   ];
 
   ngAfterViewInit() {
     this.logos.forEach((logo: ElementRef) => {
       const letters = logo.nativeElement.querySelectorAll('.letter');
-      console.log('letters:', letters);
       letters.forEach((letter: HTMLElement, index: number) => {
-        const waveHeight = 15; // Hauteur de la vague
-        const offset = (index % 2 === 0 ? -1 : 1) * waveHeight; // Alterne entre haut et bas
+        const waveHeight = 15;
+        const offset = (index % 2 === 0 ? -1 : 1) * waveHeight;
         letter.style.display = 'inline-block';
         letter.style.transform = `translateY(${offset}px)`;
       });
-    });
-  }
-
-  // Animation du fond
-  svg = document.querySelector('.background svg');
-  if(svg: gsap.TweenTarget) {
-    gsap.to(svg, {
-      y: '+=20', // Ajustez la valeur pour la hauteur de la vague
-      duration: 3,
-      repeat: -1,
-      yoyo: true,
-      ease: 'sine.inOut',
     });
   }
 }

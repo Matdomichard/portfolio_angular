@@ -9,11 +9,12 @@ import { gsap } from 'gsap';
 export class AppComponent implements AfterViewInit {
   ngAfterViewInit() {
     this.adjustSvgSize();
-    // Animation du fond
-    const svg: SVGSVGElement | null = document.querySelector('.background svg');
+    // Animation du fond vert
+    const svg: SVGSVGElement | null =
+      document.querySelector('.green-layer svg');
     if (svg) {
       gsap.to(svg, {
-        y: '+=20', // Ajustez la valeur pour la hauteur de la vague
+        y: '+=20', // Ajuster la valeur pour la hauteur de la vague
         duration: 3,
         repeat: -1,
         yoyo: true,
@@ -28,7 +29,7 @@ export class AppComponent implements AfterViewInit {
   }
 
   adjustSvgSize() {
-    const svg = document.getElementById('background-svg');
+    const svg = document.getElementById('green-layer');
     if (svg) {
       svg.setAttribute('width', `${window.innerWidth}`);
       svg.setAttribute('height', `${window.innerHeight}`);
