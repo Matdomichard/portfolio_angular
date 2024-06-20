@@ -1,4 +1,4 @@
-.home-container {
+.title-container {
   color: #fff;
   text-align: center;
   padding: 50px;
@@ -9,18 +9,26 @@
   justify-content: flex-end;
   overflow: hidden;
 }
-.header-box {
+
+.title-box {
   margin-top: 80px;
   margin-bottom: 80px;
 }
 
-.header-font {
-  font-size: 250px;
+.title-font {
+  font-size: 16vw;
   border: #272623;
   border-width: 6px;
   line-height: 0.8;
   font-family: "Fira Sans", sans-serif;
   font-weight: 600;
+}
+
+/* Additional media query for smaller screens */
+@media (max-width: 600px) {
+  .title-font {
+    font-size: 12vw;
+  }
 }
 
 .letter {

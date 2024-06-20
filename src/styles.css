@@ -13,7 +13,6 @@ body {
 }
 
 .container app-title,
-.container app-home,
 .container app-about,
 .container app-skills,
 .container app-projects,
@@ -24,6 +23,8 @@ body {
 /* background style */
 .background {
   position: fixed;
+  display: flex;
+  align-items: flex-end;
   width: 100%;
   height: 100%;
   z-index: -3;
