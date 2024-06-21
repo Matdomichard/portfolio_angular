@@ -1,33 +1,43 @@
-.projects {
-  padding: 50px 20px;
-}
-
-.projects h2 {
-  font-size: 2.5em;
-  margin-bottom: 20px;
-}
-
-.project-list {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.project {
+.project-section {
+  position: relative;
   width: 100%;
-  margin-bottom: 20px;
+  height: 200vh; /* Augmenter la hauteur pour permettre le défilement */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Aligner les éléments au début */
+  overflow: hidden;
+  margin-top: 50px;
 }
 
-.project h3 {
-  font-size: 1.5em;
+.project-section h2 {
   margin: 0;
+  font-size: 2rem;
 }
 
-.project p {
-  font-size: 1.2em;
-  color: #666;
+.project-section p {
+  margin: 10px 0 0;
+  font-size: 1rem;
 }
 
-.project a {
-  color: #007bff;
-  text-decoration: none;
+.project-section .circle {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: #050d2f;
+  z-index: 1;
+  top: 10%; /* Positionner le cercle plus haut */
+  left: 50%;
+  transform: translateX(-50%);
+  transition: width 0.5s, height 0.5s, top 0.5s, left 0.5s;
+}
+
+.project-section .content {
+  position: absolute;
+  color: #fff;
+  text-align: center;
+  z-index: 2;
+  top: 15%; /* Positionner le texte plus haut */
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

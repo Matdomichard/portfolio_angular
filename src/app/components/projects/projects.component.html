@@ -1,10 +1,7 @@
-<div class="projects">
-  <h2>Projects</h2>
-  <div class="project-list">
-    <div class="project" *ngFor="let project of projects">
-      <h3>{{ project.name }}</h3>
-      <p>{{ project.description }}</p>
-      <a [href]="project.link" target="_blank">View Project</a>
-    </div>
+<div class="project-section">
+  <div class="circle" #circle></div>
+  <div class="content" #content>
+    <h2>Your Project Title</h2>
+    <p>Your project description goes here...</p>
   </div>
 </div>
