@@ -32,14 +32,12 @@ export class ProjectsComponent implements AfterViewInit {
 
     // Commence l'animation seulement quand le cercle est visible
     if (scrollTop + windowHeight > circleTop) {
-      const startScroll = circleTop - windowHeight;
-      const midScrollTop = startScroll + windowHeight / 2;
+      const startScroll = circleTop - windowHeight / 2;
       const maxScrollTop = startScroll + windowHeight;
       const scrollPercent =
-        (scrollTop - midScrollTop) / (maxScrollTop - midScrollTop);
+        (scrollTop - startScroll) / (maxScrollTop - startScroll);
 
-      const clampedScrollPercent = Math.min(Math.max(scrollPercent, 0), 1);
-      const newSize = 400 + windowHeight * clampedScrollPercent * 2;
+      const newSize = 600 + windowHeight * scrollPercent * 2; // Augmenter la taille
       circleElement.style.width = `${newSize}px`;
       circleElement.style.height = `${newSize}px`;
     }

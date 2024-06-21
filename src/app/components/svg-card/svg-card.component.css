@@ -1,0 +1,55 @@
+.card-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 1100px; /* Position the circle higher */
+}
+
+.card {
+  width: 630px;
+  height: 500px;
+  text-align: left;
+  border: solid;
+  border-width: 2px;
+  border-color: #272623;
+  position: absolute;
+}
+
+.card1_rotate {
+  background-color: #46a9e5;
+  transform: rotate(-35deg);
+  transition-duration: 4s;
+  mix-blend-mode: hard-light;
+}
+
+.card2_rotate {
+  background-color: #00a64b;
+  transform: rotate(35deg);
+  transition-duration: 4s;
+  mix-blend-mode: hard-light;
+}
+
+.p2_title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 20px;
+}
+
+.p2_text {
+  font-size: 1.5rem;
+  margin: 20px;
+}
+
+@media (min-width: 744px) {
+  .card1_rotate {
+    right: 50%;
+  }
+
+  .card2_rotate {
+    left: 50%;
+  }
+}

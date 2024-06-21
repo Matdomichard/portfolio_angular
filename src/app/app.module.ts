@@ -8,6 +8,7 @@ import { ProjectsComponent } from './components/projects/projects.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { FormsModule } from '@angular/forms';
 import { TitleComponent } from './components/title/title.component';
+import { SvgCardComponent } from './components/svg-card/svg-card.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { TitleComponent } from './components/title/title.component';
     ProjectsComponent,
     ContactComponent,
     TitleComponent,
+    SvgCardComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],
