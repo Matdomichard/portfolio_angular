@@ -18,9 +18,9 @@
   border: solid;
   border-width: 2px;
   border-color: #272623;
-  transition: 1s;
   text-decoration: none;
   color: #272623;
+  transition: transform 1s, background-color 0.3s, color 0.3s;
 }
 
 .menu_intro,
@@ -42,19 +42,10 @@
 }
 
 .menu_box:hover {
-  background-color: #b39b78;
+  background-color: #272623;
   color: #fff;
 }
 
-.menu_box.rotate {
-  animation: rotateAnimation 2s forwards;
-}
-
-@keyframes rotateAnimation {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+.rotate {
+  transform: rotateX(360deg);
 }
