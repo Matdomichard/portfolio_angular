@@ -19,17 +19,17 @@
 }
 
 .blob-wrapper.blob1 {
-  transform: translate(-150%, -10%) rotate(0deg) translate(300px, 0)
+  transform: translate(-150%, -70%) rotate(0deg) translate(300px, 0)
     rotate(0deg);
 }
 
 .blob-wrapper.blob2 {
-  transform: translate(-150%, -10%) rotate(120deg) translate(300px, 0)
+  transform: translate(-150%, -70%) rotate(120deg) translate(300px, 0)
     rotate(-120deg);
 }
 
 .blob-wrapper.blob3 {
-  transform: translate(-140%, -10%) rotate(240deg) translate(300px, 0)
+  transform: translate(-140%, -70%) rotate(240deg) translate(300px, 0)
     rotate(-240deg);
 }
 
