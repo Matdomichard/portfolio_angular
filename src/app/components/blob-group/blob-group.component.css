@@ -29,7 +29,7 @@
 }
 
 .blob-wrapper.blob3 {
-  transform: translate(-150%, -10%) rotate(240deg) translate(300px, 0)
+  transform: translate(-140%, -10%) rotate(240deg) translate(300px, 0)
     rotate(-240deg);
 }
 
@@ -39,5 +39,5 @@
   margin: 0;
   padding: 0;
   opacity: 0.8;
-  mix-blend-mode: overlay;
+  mix-blend-mode: multiply;
 }

@@ -68,7 +68,7 @@ body {
   left: 20%; /* Déplacement vers la droite */
   top: 40%; /* Déplacement vers le bas */
   opacity: 0.4;
-  mix-blend-mode: overlay; /* Mélange de couleurs pour éclaircir */
+  mix-blend-mode: multiply; /* Mélange de couleurs pour éclaircir */
 }
 
 .saturated-svg {
@@ -85,7 +85,7 @@ body {
   left: 80%; /* Déplacement vers la droite */
   top: 40%; /* Déplacement vers le bas */
   opacity: 0.9;
-  mix-blend-mode: overlay; /* Mélange de couleurs pour éclaircir */
+  mix-blend-mode: multiply; /* Mélange de couleurs pour éclaircir */
 }
 
 .saturated-svg .blue {
@@ -93,8 +93,8 @@ body {
   transform: rotate(90deg) translateX(-60%) translateY(70%); /* Rotation et ajustement horizontal */
   left: 80%; /* Déplacement vers la droite */
   top: 40%; /* Déplacement vers le bas */
-  opacity: 0.9;
-  mix-blend-mode: color; /* Mélange de couleurs pour éclaircir */
+  opacity: 0.8;
+  mix-blend-mode: multiply; /* Mélange de couleurs pour éclaircir */
 }
 
 .background-svg.green {

@@ -16,8 +16,10 @@ export class BlobGroupComponent implements AfterViewInit {
   @HostListener('window:scroll', ['$event'])
   onScroll(event: any) {
     const scrollPos = window.scrollY;
+    const direction = this.group === 1 ? -1 : 1;
     gsap.to(`.blob-group-${this.group}`, {
-      x: this.group === 1 ? -scrollPos * 0.2 : scrollPos * 0.2, // Déplacement à gauche ou à droite
+      x: direction * scrollPos * 0.5, // Horizontal
+      y: scrollPos, //  parallax effect
       ease: 'power1.out',
     });
   }
@@ -27,7 +29,7 @@ export class BlobGroupComponent implements AfterViewInit {
     blobs.forEach((blob) => {
       gsap.to(blob, {
         rotation: 360,
-        duration: 20,
+        duration: 40,
         repeat: -1,
         ease: 'linear',
       });
