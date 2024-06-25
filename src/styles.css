@@ -96,3 +96,13 @@ body {
   opacity: 0.9;
   mix-blend-mode: color; /* Mélange de couleurs pour éclaircir */
 }
+
+.background-svg.green {
+  top: 10%;
+  left: 5%;
+}
+
+.background-svg.blue {
+  top: 20%;
+  left: 10%;
+}
