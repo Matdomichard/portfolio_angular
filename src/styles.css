@@ -40,3 +40,59 @@ body {
   left: 0;
   z-index: -2;
 }
+
+/* Blue Layer */
+.blue-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.background-svg {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.background-svg.green {
+  width: 450px; /* Taille ajustée */
+  transform: rotate(-50deg) translateX(-10%) translateY(60%); /* Rotation et ajustement horizontal */
+  top: 30%; /* Déplacement vers le bas */
+}
+
+.background-svg.blue {
+  width: 450px; /* Taille ajustée */
+  transform: translateX(150%) translateY(-20%); /* Rotation et ajustement horizontal */
+  left: 20%; /* Déplacement vers la droite */
+  top: 40%; /* Déplacement vers le bas */
+  opacity: 0.4;
+  mix-blend-mode: overlay; /* Mélange de couleurs pour éclaircir */
+}
+
+.saturated-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.saturated-svg .green {
+  width: 450px; /* Taille ajustée */
+  transform: rotate(-220deg) translateX(-90%) translateY(50%); /* Rotation et ajustement horizontal */
+  left: 80%; /* Déplacement vers la droite */
+  top: 40%; /* Déplacement vers le bas */
+  opacity: 0.9;
+  mix-blend-mode: overlay; /* Mélange de couleurs pour éclaircir */
+}
+
+.saturated-svg .blue {
+  width: 450px; /* Taille ajustée */
+  transform: rotate(90deg) translateX(-60%) translateY(70%); /* Rotation et ajustement horizontal */
+  left: 80%; /* Déplacement vers la droite */
+  top: 40%; /* Déplacement vers le bas */
+  opacity: 0.9;
+  mix-blend-mode: color; /* Mélange de couleurs pour éclaircir */
+}

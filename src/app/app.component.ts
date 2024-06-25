@@ -8,11 +8,10 @@ import { gsap } from 'gsap';
 })
 export class AppComponent implements AfterViewInit {
   ngAfterViewInit() {
-    this.adjustSvgSize();
-    // Animation du fond vert
-    const svg: SVGSVGElement | null =
-      document.querySelector('.green-layer svg');
-    if (svg) {
+    // Sélectionner et animer les SVG avec les classes .background-svg et .saturated-svg
+
+    const greenlayer = document.querySelectorAll('.green-layer');
+    greenlayer.forEach((svg) => {
       gsap.to(svg, {
         y: '+=20', // Ajuster la valeur pour la hauteur de la vague
         duration: 3,
@@ -20,19 +19,28 @@ export class AppComponent implements AfterViewInit {
         yoyo: true,
         ease: 'sine.inOut',
       });
-    }
-  }
+    });
 
-  @HostListener('window:resize', ['$event'])
-  onResize(event: any) {
-    this.adjustSvgSize();
-  }
+    const bluelayer = document.querySelectorAll('.blue-layer');
+    bluelayer.forEach((svg) => {
+      gsap.to(svg, {
+        y: '+=30', // Ajuster la valeur pour la hauteur de la vague
+        duration: 3,
+        repeat: -1,
+        yoyo: true,
+        ease: 'sine.inOut',
+      });
+    });
 
-  adjustSvgSize() {
-    const svg = document.getElementById('green-layer');
-    if (svg) {
-      svg.setAttribute('width', `${window.innerWidth}`);
-      svg.setAttribute('height', `${window.innerHeight}`);
-    }
+    const saturatedsvf = document.querySelectorAll('.saturated-svg');
+    saturatedsvf.forEach((svg) => {
+      gsap.to(svg, {
+        y: '+=5', // Ajuster la valeur pour la hauteur de la vague
+        duration: 3,
+        repeat: -1,
+        yoyo: true,
+        ease: 'sine.inOut',
+      });
+    });
   }
 }
