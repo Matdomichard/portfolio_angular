@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, Input, HostListener } from '@angular/core';
+import { Component, AfterViewInit, HostListener, Input } from '@angular/core';
 import { gsap } from 'gsap';
 
 @Component({
@@ -19,7 +19,7 @@ export class BlobGroupComponent implements AfterViewInit {
     const direction = this.group === 1 ? -1 : 1;
     gsap.to(`.blob-group-${this.group}`, {
       x: direction * scrollPos * 0.5, // Horizontal
-      y: scrollPos, //  parallax effect
+      y: scrollPos, // Parallax effect
       ease: 'power1.out',
     });
   }
@@ -28,7 +28,7 @@ export class BlobGroupComponent implements AfterViewInit {
     const blobs = document.querySelectorAll(`.blob-group-${this.group} .blob`);
     blobs.forEach((blob) => {
       gsap.to(blob, {
-        rotation: 360,
+        rotation: this.group === 1 ? 360 : -360, // Rotate in different directions
         duration: 40,
         repeat: -1,
         ease: 'linear',

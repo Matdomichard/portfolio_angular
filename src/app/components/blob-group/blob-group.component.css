@@ -19,18 +19,31 @@
 }
 
 .blob-wrapper.blob1 {
-  transform: translate(-150%, -70%) rotate(0deg) translate(300px, 0)
-    rotate(0deg);
+  transform: translate(-150%, 0%) rotate(0deg) translate(300px, 0) rotate(0deg);
 }
 
 .blob-wrapper.blob2 {
-  transform: translate(-150%, -70%) rotate(120deg) translate(300px, 0)
-    rotate(-120deg);
+  transform: translate(-150%, 0%) rotate(120deg) translate(300px, 0)
+    rotate(-10deg);
 }
 
 .blob-wrapper.blob3 {
-  transform: translate(-140%, -70%) rotate(240deg) translate(300px, 0)
-    rotate(-240deg);
+  transform: translate(-140%, 0%) rotate(240deg) translate(300px, 0)
+    rotate(-190deg);
+}
+
+.blob-wrapper.blob4 {
+  transform: translate(30%, 70%) rotate(0deg) translate(300px, 0) rotate(60deg);
+}
+
+.blob-wrapper.blob5 {
+  transform: translate(30%, 70%) rotate(120deg) translate(300px, 0)
+    rotate(-10deg);
+}
+
+.blob-wrapper.blob6 {
+  transform: translate(30%, 70%) rotate(240deg) translate(300px, 0)
+    rotate(-40deg);
 }
 
 .blob {
