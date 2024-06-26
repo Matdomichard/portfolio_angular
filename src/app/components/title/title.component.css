@@ -9,6 +9,26 @@
   justify-content: flex-end;
   overflow: hidden;
 }
+.portfolio_word {
+  font-family: "Rubik Bubbles", sans-serif;
+  font-size: 60px;
+  color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 100%;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+@media (max-width: 768px) {
+  .portfolio_word {
+    font-size: 30px;
+    margin-top: 25px;
+  }
+}
 
 .title-box {
   margin-top: 80px;
