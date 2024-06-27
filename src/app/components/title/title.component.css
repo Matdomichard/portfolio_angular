@@ -50,8 +50,7 @@
   line-height: 1;
 }
 
-/* SKILLS */
-
+/* Styles pour les compétences (skills) */
 .skills-container {
   display: flex;
   flex-wrap: wrap;
@@ -87,19 +86,28 @@
   font-size: 50px;
 }
 
-/* Additional media query for smaller screens */
+/* Ajustements pour les petits écrans */
 @media (max-width: 600px) {
   .skills-container {
-    margin: 0 0x;
+    margin: 0;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-wrap: wrap;
   }
   .blob-container {
+    width: 150px;
+    height: 150px;
+    margin: 5px;
+  }
+  .blob {
     width: 100%;
     height: 100%;
   }
-}
-
-@media (max-width: 600px) {
-  .title-font {
-    font-size: 12vw;
+  .skill i {
+    font-size: 20px;
+  }
+  .skill {
+    padding-bottom: 2%;
   }
 }

@@ -4,6 +4,8 @@ import {
   ElementRef,
   QueryList,
   ViewChildren,
+  Renderer2,
+  HostListener,
 } from '@angular/core';
 import { gsap } from 'gsap';
 
@@ -26,15 +28,39 @@ export class TitleComponent implements AfterViewInit {
     { name: 'GitLab CI/CD', icon: 'fab fa-gitlab' },
   ];
 
+  constructor(private renderer: Renderer2) {}
+
   ngAfterViewInit() {
-    this.logos.forEach((logo: ElementRef) => {
-      const letters = logo.nativeElement.querySelectorAll('.letter');
-      letters.forEach((letter: HTMLElement, index: number) => {
-        const waveHeight = 15;
-        const offset = (index % 2 === 0 ? -1 : 1) * waveHeight;
-        letter.style.display = 'inline-block';
-        letter.style.transform = `translateY(${offset}px)`;
+    this.applyWaveStyle();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.applyWaveStyle();
+  }
+
+  applyWaveStyle() {
+    if (window.innerWidth > 768) {
+      this.logos.forEach((logo: ElementRef) => {
+        const letters = logo.nativeElement.querySelectorAll('.letter');
+        letters.forEach((letter: HTMLElement, index: number) => {
+          const waveHeight = 15;
+          const offset = (index % 2 === 0 ? -1 : 1) * waveHeight;
+          this.renderer.setStyle(letter, 'display', 'inline-block');
+          this.renderer.setStyle(
+            letter,
+            'transform',
+            `translateY(${offset}px)`
+          );
+        });
       });
-    });
+    } else {
+      this.logos.forEach((logo: ElementRef) => {
+        const letters = logo.nativeElement.querySelectorAll('.letter');
+        letters.forEach((letter: HTMLElement) => {
+          this.renderer.setStyle(letter, 'transform', 'translateY(0)');
+        });
+      });
+    }
   }
 }

@@ -50,3 +50,22 @@
   font-size: 45px;
   font-family: "Fira Sans", sans-serif;
 }
+
+@media (max-width: 600px) {
+  .project-section .content {
+    top: 200px; /* Adjust the position for small screens */
+    width: 400px; /* Adjust width to fit within screen */
+  }
+
+  .project-section .content p {
+    align-items: center;
+    width: 400px; /* Full width for small screens */
+    line-height: 1.5em; /* Adjust line height */
+    font-size: 16px; /* Smaller font size */
+  }
+
+  .project-section .content h2 {
+    width: 100%; /* Full width for small screens */
+    font-size: 30px; /* Smaller font size */
+  }
+}

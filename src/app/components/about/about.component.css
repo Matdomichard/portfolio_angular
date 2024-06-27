@@ -11,3 +11,9 @@
   font-size: 1.2em;
   color: #666;
 }
+
+@media (max-width: 600px) {
+  .about p {
+    margin: 10px;
+  }
+}
