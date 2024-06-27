@@ -1,3 +1,7 @@
+.site-wrapper {
+  min-width: 450px;
+}
+
 body {
   margin: 0;
   font-family: "Roboto", sans-serif;
@@ -63,7 +67,7 @@ body {
 }
 
 .background-svg.blue {
-  width: 450px; /* Taille ajustée */
+  width: 50px; /* Taille ajustée */
   transform: translateX(150%) translateY(-20%); /* Rotation et ajustement horizontal */
   left: 20%; /* Déplacement vers la droite */
   top: 40%; /* Déplacement vers le bas */

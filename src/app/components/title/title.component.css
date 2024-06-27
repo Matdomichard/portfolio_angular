@@ -87,7 +87,7 @@
 }
 
 /* Ajustements pour les petits écrans */
-@media (max-width: 600px) {
+@media (max-width: 743px) {
   .skills-container {
     margin: 0;
     flex-direction: row;

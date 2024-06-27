@@ -51,7 +51,15 @@
   font-family: "Fira Sans", sans-serif;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 743px) {
+  .project-section .circle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    z-index: 1;
+    top: 20px; /* Position the circle higher */
+  }
+
   .project-section .content {
     top: 200px; /* Adjust the position for small screens */
     width: 400px; /* Adjust width to fit within screen */
