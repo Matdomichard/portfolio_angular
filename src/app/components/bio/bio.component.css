@@ -1,4 +1,4 @@
-.project-section {
+.bio-section {
   position: relative;
   width: 100%;
   height: 200vh; /* Increase the height to allow for more scrolling */
@@ -9,7 +9,7 @@
   margin-top: 50px;
 }
 
-.project-section .circle {
+.bio-section .circle {
   position: absolute;
   width: 400px;
   height: 400px;
@@ -23,7 +23,7 @@
   overflow: hidden;
 }
 
-.project-section .content {
+.bio-section .content {
   position: absolute;
   color: #fff;
   text-align: center;
@@ -35,7 +35,7 @@
   box-sizing: border-box;
 }
 
-.project-section .content p {
+.bio-section .content p {
   width: 650px; /* Limit width to ensure text fits within circle */
   line-height: 40px;
   padding: 12px;
@@ -44,7 +44,7 @@
   text-align: justify;
 }
 
-.project-section .content h2 {
+.bio-section .content h2 {
   width: 650px; /* Limit width to ensure text fits within circle */
   /* padding: 12px; */
   font-size: 45px;
@@ -52,7 +52,7 @@
 }
 
 @media (max-width: 743px) {
-  .project-section .circle {
+  .bio-section .circle {
     position: absolute;
     width: 10px;
     height: 10px;
@@ -60,19 +60,19 @@
     top: 20px; /* Position the circle higher */
   }
 
-  .project-section .content {
+  .bio-section .content {
     top: 200px; /* Adjust the position for small screens */
     width: 400px; /* Adjust width to fit within screen */
   }
 
-  .project-section .content p {
+  .projbioect-section .content p {
     align-items: center;
     width: 400px; /* Full width for small screens */
     line-height: 1.5em; /* Adjust line height */
     font-size: 16px; /* Smaller font size */
   }
 
-  .project-section .content h2 {
+  .bio-section .content h2 {
     width: 100%; /* Full width for small screens */
     font-size: 30px; /* Smaller font size */
   }

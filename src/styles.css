@@ -19,7 +19,7 @@ body {
 .container app-title,
 .container app-about,
 .container app-skills,
-.container app-projects,
+.container app-bio,
 .container app-contact {
   width: 100%;
 }

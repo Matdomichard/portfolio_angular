@@ -7,11 +7,11 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'app-projects',
-  templateUrl: './projects.component.html',
-  styleUrls: ['./projects.component.css'],
+  selector: 'app-bio',
+  templateUrl: './bio.component.html',
+  styleUrls: ['./bio.component.css'],
 })
-export class ProjectsComponent implements AfterViewInit {
+export class BioComponent implements AfterViewInit {
   @ViewChild('circle') circle!: ElementRef;
   @ViewChild('content') content!: ElementRef;
 
