@@ -1,6 +1,6 @@
 <div id="contact" class="contact">
   <h2>Contact</h2>
-  <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+  <form (submit)="sendEmail($event)" #contactForm="ngForm">
     <div class="form-group">
       <label for="name">Name</label>
       <input

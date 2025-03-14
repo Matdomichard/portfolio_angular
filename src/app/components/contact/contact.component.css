@@ -1,6 +1,6 @@
 .contact {
-  padding: 100px;
-  background-color: #050d2f;
+  padding: 140px;
+  background: linear-gradient(to bottom, #050d2f, #f96565); /* Ajouté pour le dégradé */
   color: white;
   display: flex;
   align-items: center; 
