@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { TitleComponent } from './components/title/title.component';
 import { SvgCardComponent } from './components/svg-card/svg-card.component';
 import { BlobGroupComponent } from './components/blob-group/blob-group.component';
+import { ProjectsComponent } from './components/projects/projects.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { BlobGroupComponent } from './components/blob-group/blob-group.component
     TitleComponent,
     SvgCardComponent,
     BlobGroupComponent,
+    ProjectsComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],

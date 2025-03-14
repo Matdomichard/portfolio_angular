@@ -1,0 +1,17 @@
+<section id="projects" class="projets-section">
+    <h2 class="section-title">Some of my projects</h2>
+    <div class="projets-grid">
+      <div class="projet-card" *ngFor="let projet of projets">
+        <img [src]="projet.imageUrl" [alt]="projet.titre" class="projet-image" />
+        <div class="projet-overlay">
+          <p>{{ projet.description }}</p>
+          <div class="projet-links">
+            <a *ngIf="projet.lienSite" [href]="projet.lienSite" target="_blank">Visiter le site</a>
+            <a *ngIf="projet.lienCode" [href]="projet.lienCode" target="_blank">Voir le code</a>
+            <a *ngIf="projet.lienDemo" [href]="projet.lienDemo" target="_blank">Voir une démo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  

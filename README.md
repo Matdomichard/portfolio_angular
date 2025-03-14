@@ -1,27 +1,62 @@
-# PortfolioAngular
+<h1 align="center">Portfolio Angular de Mathieu Domichard</h1>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.3.
+<div align="center">
+Mon portfolio personnel développé en Angular 15
+</div>
 
-## Development server
+Ce projet est un portfolio personnel créé afin de présenter mes compétences techniques, mes expériences professionnelles, ainsi que mes projets personnels. Il a été entièrement développé avec Angular version 15, utilise GSAP pour des animations dynamiques, et s'inspire largement du design élégant et minimaliste du site [Vivivit Design Annuale 2022](https://www.vivivit.com/events/design-annuale/2022).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Ce portfolio met en avant ma capacité à développer des interfaces modernes et réactives, enrichies par des animations fluides et attractives grâce à GSAP. Il complète mes projets réalisés principalement en Java/Spring.
 
-## Code scaffolding
+## Table des matières
+- [Stack technique](#stack-technique)
+- [Installation et démarrage](#installation-et-démarrage)
+- [Déploiement](#déploiement)
+- [Contribution](#contribution)
+- [Licence](#licence)
+- [Contact](#contact)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Stack technique
 
-## Build
+Ce projet a été développé avec :
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Angular 15
+- TypeScript
+- HTML / CSS
+- GSAP (GreenSock Animation Platform)
+- Git
 
-## Running unit tests
+## Installation et démarrage
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Pour installer et lancer localement le projet, suivez ces étapes :
 
-## Running end-to-end tests
+```bash
+git clone https://github.com/votre-utilisateur/PortfolioAngular.git
+cd PortfolioAngular
+npm install
+ng serve
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+L'application sera accessible à l'adresse : [http://localhost:4200](http://localhost:4200)
 
-## Further help
+## Déploiement
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Pour déployer le portfolio en production, exécutez la commande suivante pour générer la build :
+
+```bash
+ng build --configuration production
+```
+
+Les fichiers générés seront placés dans le dossier `dist/`. Vous pouvez ensuite héberger ces fichiers sur une plateforme comme Netlify, GitHub Pages ou tout autre serveur statique.
+
+## Contribution
+
+Les contributions sont les bienvenues ! N'hésitez pas à ouvrir une pull request sur GitHub pour toute suggestion ou amélioration. Veuillez suivre les bonnes pratiques de codage et documenter vos changements clairement.
+
+## Licence
+
+Ce projet est sous licence MIT. Vous êtes libre d'utiliser, modifier et distribuer ce projet selon les termes de cette licence.
+
+## Contact
+
+Pour toute question ou suggestion, vous pouvez me contacter directement via GitHub.
