@@ -1,22 +1,25 @@
 .projets-section {
-    padding-top: 50px;
     padding-left: 700px;
     padding-right: 700px;
     background-color: #050d2f;
     color: white;
     text-align: center;
+    padding-top: 10px;
   }
 
   
   .section-title {
-    padding: 70px;
     font-size: 45px;
     font-family: "Fira Sans", sans-serif;
+    text-align: center;
+    width: auto; /* Harmonisation avec bio-section */
+    font-weight: bold; /* Renforcer la hiérarchie visuelle */
+    margin-bottom: 5vh;
   }
+  
   
   .projets-grid {
     max-width: 1500px;
-    margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 20px;
@@ -39,7 +42,6 @@
     position: absolute;
     inset: 0;
     background: rgba(0,0,0,0.7);
-    padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -63,4 +65,3 @@
     display: inline-block;
     font-weight: bold;
   }
-  

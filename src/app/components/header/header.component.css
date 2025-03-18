@@ -49,3 +49,12 @@
 .rotate {
   transform: rotateX(360deg);
 }
+
+
+
+/* mobile */
+@media (max-width: 743px) {
+  .floating-menu  {
+    display: none;
+  }
+}
