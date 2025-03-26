@@ -69,6 +69,14 @@
   }
 }
 
+@media (max-width: 1600px) {
+  .card-container {
+    margin-top: 100px;
+    height: 900px;
+    top: 1100px
+  }
+}
+
 @media (max-width: 743px) {
   .card-container {
     height: 100vh;
