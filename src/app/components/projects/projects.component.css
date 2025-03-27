@@ -1,8 +1,10 @@
 .projets-section {
-    background-color: #050d2f;
+    background: #050d2f;
     color: white;
     text-align: center;
     padding-top: 10px;
+    width: 100vw; 
+
   }
 
   
@@ -10,8 +12,8 @@
     font-size: 45px;
     font-family: "Fira Sans", sans-serif;
     text-align: center;
-    width: auto; /* Harmonisation avec bio-section */
-    font-weight: bold; /* Renforcer la hiérarchie visuelle */
+    width: auto;
+    font-weight: bold; 
     margin: 40px;
   }
   
@@ -19,7 +21,6 @@
   .projets-grid {
     padding-left: 10%;
     padding-right: 10%;
-    max-width: 2000px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 20px;
