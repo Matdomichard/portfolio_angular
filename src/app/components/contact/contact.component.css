@@ -44,3 +44,10 @@ button {
   border-radius: 5px;
   cursor: pointer;
 }
+
+@media (max-width: 743px) {
+  .form-group {
+    min-width: auto;   /* annule le min-width */
+    margin: 0 auto;    /* pour bien centrer */
+  }
+}
