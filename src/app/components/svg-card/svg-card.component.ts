@@ -11,5 +11,5 @@ export class SvgCardComponent {
     'Experienced in Java, Spring Boot, Spring Data, Spring Security, and RESTful APIs within a Service-Oriented Architecture (SOA).';
   @Input() title2: string = 'FRONTEND';
   @Input() content2: string =
-    'Proficient in Angular, TypeScript, and responsive design.';
+    'Proficient in Angular, Vue.js TypeScript, and responsive design.';
 }

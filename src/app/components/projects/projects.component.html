@@ -1,15 +1,65 @@
 <section class="projets-section">
   <div class="projets-content">
-    <h2 class="section-title">Here are some of my projects</h2>
+    <h2 class="section-title">My Projects</h2>
     <div class="projets-grid">
       <div class="projet-card" *ngFor="let projet of projets">
-        <img [src]="projet.imageUrl" [alt]="projet.titre" class="projet-image" />
-        <div class="projet-overlay">
+        <img
+          [src]="projet.imageUrl"
+          [alt]="projet.titre"
+          class="projet-image"
+        />
+        <div class="projets-description">
+          <h3>{{ projet.titre }}</h3>
           <p>{{ projet.description }}</p>
+
+          <div class="technologies">
+            <span
+              class="tech-tag"
+              *ngFor="let tech of projet.technologies"
+              >{{ tech }}</span
+            >
+          </div>
+
           <div class="projet-links">
-            <a *ngIf="projet.lienSite" [href]="projet.lienSite" target="_blank">Visiter le site</a>
-            <a *ngIf="projet.lienCode" [href]="projet.lienCode" target="_blank">Voir le code</a>
-            <a *ngIf="projet.lienDemo" [href]="projet.lienDemo" target="_blank">Voir une démo</a>
+            <!-- bouton site -->
+            <a
+              *ngIf="projet.lienSite"
+              [href]="projet.lienSite"
+              target="_blank"
+              >Visiter le site</a
+            >
+
+            <!-- si on a deux repos : front + back -->
+            <ng-container *ngIf="projet.lienCodeFront && projet.lienCodeBack; else singleCode">
+              <a
+                [href]="projet.lienCodeFront"
+                target="_blank"
+                >Voir le code front</a
+              >
+              <a
+                [href]="projet.lienCodeBack"
+                target="_blank"
+                >Voir le code back</a
+              >
+            </ng-container>
+
+            <!-- fallback pour un seul lien code -->
+            <ng-template #singleCode>
+              <a
+                *ngIf="projet.lienCode"
+                [href]="projet.lienCode"
+                target="_blank"
+                >Voir le code</a
+              >
+            </ng-template>
+
+            <!-- bouton démo -->
+            <a
+              *ngIf="projet.lienDemo"
+              [href]="projet.lienDemo"
+              target="_blank"
+              >Voir une démo</a
+            >
           </div>
         </div>
       </div>

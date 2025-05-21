@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -24,8 +25,8 @@ import { ProjectsComponent } from './components/projects/projects.component';
     BlobGroupComponent,
     ProjectsComponent,
   ],
-  imports: [BrowserModule, FormsModule],
+  imports: [BrowserModule, BrowserAnimationsModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

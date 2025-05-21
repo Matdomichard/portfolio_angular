@@ -19,10 +19,10 @@ export class TitleComponent implements AfterViewInit {
 
   skills = [
     { name: 'Java', icon: 'fab fa-java' },
-    { name: 'Spring', icon: 'fas fa-leaf' },
+    { name: 'Spring Boot', icon: 'fas fa-leaf' },
     { name: 'JavaScript', icon: 'fab fa-js' },
     { name: 'Angular', icon: 'fab fa-angular' },
-    { name: 'Vue', icon: 'fab fa-vuejs' },
+    { name: 'Vue.js', icon: 'fab fa-vuejs' },
     { name: 'SQL', icon: 'fas fa-database' },
     { name: 'HTML & CSS', icon: 'fab fa-html5' },
     { name: 'React Native', icon: 'fab fa-react' },

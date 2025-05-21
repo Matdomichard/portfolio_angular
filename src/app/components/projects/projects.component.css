@@ -1,98 +1,146 @@
+/* Conteneur full-width avec background et centrage */
 .projets-section {
   background: #050d2f;
   color: white;
-  text-align: center;
-}
-
-.section-title {
-  font-size: 45px;
-  font-family: "Fira Sans", sans-serif;
-  font-weight: bold;
-  margin-bottom: 40px;
-}
-
-/* Grille fluide et large sans padding */
-.projets-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 20px; /* juste un petit peu pour mobile */
+  padding: 60px 20px;
+  min-height: 100vh;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
   box-sizing: border-box;
 }
 
+.projets-content {
+  max-width: 1800px;
+  margin: 0 auto;
+}
+
+/* Titre de section */
+.section-title {
+  font-size: 55px;
+  font-family: "Fira Sans", sans-serif;
+  font-weight: bold;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+/* Grille responsive */
+.projets-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  align-items: stretch; /* pour que toutes les cartes aient la même hauteur */
+}
+
+/* Carte projet */
 .projet-card {
-  position: relative;
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   overflow: hidden;
-  border: 2px solid #fff;
-  background-color: #fff;
-}
-
-.projet-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.projet-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.7);
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-  font-family: "Fira Sans", sans-serif;
+  transition: transform 0.3s ease;
 }
 
-.projet-card:hover .projet-overlay {
-  opacity: 1;
+.projet-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Image en haut */
+.projet-image {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+
+/* Description et contenu : remplace anciennement .projet-content */
+.projets-description {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 35px;
+}
+
+/* Titre du projet */
+.projets-description h3 {
+  font-size: 28px;
+  color: #fff;
+  margin: 0 0 20px 0;
+  min-height: 34px;
+}
+
+/* Paragraphe description */
+.projets-description p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 25px 0;
+  min-height: 80px;
+}
+
+/* Tags techno */
+.technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: auto;  /* pousse les tags vers le haut si possible */
+  min-height: 10px;
+}
+
+.tech-tag {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Barre de boutons en bas */
+.projet-links {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px 0;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  height: 80px; /* fixe la hauteur */
 }
 
 .projet-links a {
+  background: #c8b885;
   color: #050d2f;
-  background-color: white;
-  text-decoration: none;
-  padding: 8px 12px;
+  padding: 12px 24px;
   border-radius: 8px;
-  margin: 5px;
-  display: inline-block;
-  font-weight: bold;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  transition: transform 0.2s ease;
 }
 
-
-
-/* Grand écran (>= 1200px) : 3 colonnes */
-@media (min-width: 1200px) {
-  .projets-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .projets-section {
-    padding: 60px 300px;
-  }
-
+.projet-links a:hover {
+  background: #fff;
+  transform: translateY(-2px);
 }
 
-/*  moyen  */
-@media (min-width: 768px) and (max-width: 1199px) {
-  .projets-grid {
-    grid-template-columns: repeat(1, minmax(100px, 1fr));
-  }
-}
-
-/* Mobile (< 768px) : 1 colonne */
-@media (max-width: 767px) {
+/* Responsivité */
+@media (max-width: 1400px) {
   .projets-grid {
     grid-template-columns: 1fr;
-    padding: 0 10px;
   }
+}
+
+@media (max-width: 768px) {
   .projets-section {
+    padding: 40px 20px;
+  }
+  .section-title {
+    font-size: 32px;
+  }
+  /* On laisse le même padding sur mobile */
+  .projets-description {
     padding: 10px 20px;
+  }
+  .projets-description p {
+    min-height: auto;
   }
 }
