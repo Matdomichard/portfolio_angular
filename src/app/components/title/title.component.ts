@@ -8,6 +8,9 @@ import {
   HostListener,
 } from '@angular/core';
 import { gsap } from 'gsap';
+import { TextPlugin } from 'gsap/TextPlugin';
+
+gsap.registerPlugin(TextPlugin);
 
 @Component({
   selector: 'app-title',
@@ -16,6 +19,9 @@ import { gsap } from 'gsap';
 })
 export class TitleComponent implements AfterViewInit {
   @ViewChildren('logo') logos!: QueryList<ElementRef>;
+  @ViewChildren('loader') loader!: ElementRef;
+  @ViewChildren('loaderText') loaderText!: ElementRef;
+  @ViewChildren('mainContent') mainContent!: ElementRef;
 
   skills = [
     { name: 'Java', icon: 'fab fa-java' },
@@ -32,7 +38,50 @@ export class TitleComponent implements AfterViewInit {
   constructor(private renderer: Renderer2) {}
 
   ngAfterViewInit() {
-    this.applyWaveStyle();
+    this.startLoaderAnimation();
+  }
+
+  startLoaderAnimation() {
+    const steps = ["DÉVELOPPEUR", "CRÉATIF", "PASSIONNÉ", "MATTHIEU DOMICHARD"];
+    
+    gsap.set(".loader", { autoAlpha: 1 });
+    gsap.set(".main-content", { autoAlpha: 0 });
+    
+    const tl = gsap.timeline({
+      onComplete: () => {
+        gsap.to(".loader", { 
+          autoAlpha: 0, 
+          duration: 0.5,
+          onComplete: () => {
+            const loader = document.querySelector('.loader');
+            if (loader) loader.remove();
+            this.applyWaveStyle();
+          }
+        });
+        gsap.to(".main-content", { 
+          autoAlpha: 1, 
+          duration: 0.5,
+          delay: 0.2
+        });
+      }
+    });
+
+    steps.forEach((word) => {
+      tl.add(gsap.timeline()
+        .set(".loader-text", { text: word })
+        .to(".loader-text", { 
+          autoAlpha: 1, 
+          duration: 0.4, 
+          ease: "power2.in"
+        })
+        .to(".loader-text", { duration: 0.8 })
+        .to(".loader-text", { 
+          autoAlpha: 0, 
+          duration: 0.4, 
+          ease: "power2.out"
+        })
+      );
+    });
   }
 
   @HostListener('window:resize', ['$event'])
