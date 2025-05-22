@@ -24,9 +24,9 @@ export class ProjectsComponent implements OnInit {
   projets: Projet[] = [
     {
       titre: 'Frequencies Tombola',
-      imageUrl: 'https://res.cloudinary.com/dyx38qkbh/image/upload/v1698760398/Portfolio/frequencies.png',
+      imageUrl: 'https://res.cloudinary.com/dyx38qkbh/image/upload/f_auto,q_auto/v1/Portfolio/frequencies',
       description: `Application de tombola numérique pour l'association Frequencies. Permet la gestion des participants, l'attribution des numéros et le tirage au sort en direct. Interface administrateur pour la gestion des lots et des participants.`,
-      technologies: ['Spring Boot', 'Angular', 'PostgreSQL', 'Docker'],
+      technologies: ["Angular", "Java", 'PostgreSQL', 'Docker'],
       // on sépare front et back
       lienCodeFront: 'https://github.com/Matdomichard/frequencies-tombola-ui',
       lienCodeBack:  'https://github.com/Matdomichard/frequencies-tombola-api'
@@ -43,7 +43,7 @@ export class ProjectsComponent implements OnInit {
       titre: 'Sleep Tracker',
       imageUrl: 'https://res.cloudinary.com/dyx38qkbh/image/upload/v1698760594/Portfolio/zzztracker.jpg',
       description: `SleepTracker est une application web complète permettant aux utilisateurs de suivre facilement les jours restants avant un événement important ou un objectif personnel. Grâce à une interface intuitive, vous pouvez créer votre compte, enregistrer vos dates clés et visualiser en un coup d'œil le temps restant en jours, semaines, mois, années ou encore en nombre de nuits de sommeil.`,
-      technologies: ['Angular', 'Node.js', 'Express', 'MongoDB'],
+      technologies: ["Angular", "Java", "Spring Boot", "PostgreSQL"],
       lienCodeFront: 'https://github.com/Matdomichard/zzztracker-frontend',
       lienCodeBack:  'https://github.com/Matdomichard/CompteArebours',
       lienSite: 'https://zzztracker.vercel.app/'

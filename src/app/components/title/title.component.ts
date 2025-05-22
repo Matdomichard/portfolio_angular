@@ -38,30 +38,31 @@ export class TitleComponent implements AfterViewInit {
   constructor(private renderer: Renderer2) {}
 
   ngAfterViewInit() {
+    // Appliquer d'abord le style de vague
+    this.applyWaveStyle();
+    // Puis démarrer l'animation du loader
     this.startLoaderAnimation();
-  }
+}
 
-  startLoaderAnimation() {
-    const steps = ["DÉVELOPPEUR", "CRÉATIF", "PASSIONNÉ", "MATTHIEU DOMICHARD"];
-    
-    gsap.set(".loader", { autoAlpha: 1 });
-    gsap.set(".main-content", { autoAlpha: 0 });
-    
+startLoaderAnimation() {
+    const steps = ["DÉVELOPPEUR", "FULL STACK"];
     const tl = gsap.timeline({
       onComplete: () => {
-        gsap.to(".loader", { 
-          autoAlpha: 0, 
-          duration: 0.5,
+        gsap.to(".loader", {
+          x: "100%",
+          duration: 1.2,
+          ease: "power2.inOut",
           onComplete: () => {
             const loader = document.querySelector('.loader');
-            if (loader) loader.remove();
-            this.applyWaveStyle();
+            if (loader) {
+              loader.remove();
+              // Forcer le scroll en haut de la page
+              window.scrollTo({
+                top: 0,
+                behavior: 'auto'
+              });
+            }
           }
-        });
-        gsap.to(".main-content", { 
-          autoAlpha: 1, 
-          duration: 0.5,
-          delay: 0.2
         });
       }
     });
@@ -69,15 +70,15 @@ export class TitleComponent implements AfterViewInit {
     steps.forEach((word) => {
       tl.add(gsap.timeline()
         .set(".loader-text", { text: word })
-        .to(".loader-text", { 
-          autoAlpha: 1, 
-          duration: 0.4, 
+        .to(".loader-text", {
+          autoAlpha: 1,
+          duration: 0.4,
           ease: "power2.in"
         })
         .to(".loader-text", { duration: 0.8 })
-        .to(".loader-text", { 
-          autoAlpha: 0, 
-          duration: 0.4, 
+        .to(".loader-text", {
+          autoAlpha: 0,
+          duration: 0.4,
           ease: "power2.out"
         })
       );
