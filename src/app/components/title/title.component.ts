@@ -6,9 +6,11 @@ import {
   ViewChildren,
   Renderer2,
   HostListener,
+  OnInit
 } from '@angular/core';
 import { gsap } from 'gsap';
 import { TextPlugin } from 'gsap/TextPlugin';
+import { TranslationService } from '../../services/translation.service';
 
 gsap.registerPlugin(TextPlugin);
 
@@ -17,7 +19,7 @@ gsap.registerPlugin(TextPlugin);
   templateUrl: './title.component.html',
   styleUrls: ['./title.component.css'],
 })
-export class TitleComponent implements AfterViewInit {
+export class TitleComponent implements OnInit, AfterViewInit {
   @ViewChildren('logo') logos!: QueryList<ElementRef>;
   @ViewChildren('loader') loader!: ElementRef;
   @ViewChildren('loaderText') loaderText!: ElementRef;
@@ -35,17 +37,23 @@ export class TitleComponent implements AfterViewInit {
     { name: 'GitLab CI/CD', icon: 'fab fa-gitlab' },
   ];
 
-  constructor(private renderer: Renderer2) {}
+  constructor(private renderer: Renderer2, private translationService: TranslationService) {}
 
-  ngAfterViewInit() {
-    // Appliquer d'abord le style de vague
+  ngOnInit(): void {
+    // Initialize component
+  }
+
+  ngAfterViewInit(): void {
+    // Start the loader animation when the view is initialized
     this.applyWaveStyle();
-    // Puis démarrer l'animation du loader
     this.startLoaderAnimation();
-}
+  }
 
-startLoaderAnimation() {
-    const steps = ["DÉVELOPPEUR", "FULL STACK"];
+  startLoaderAnimation() {
+    const steps = [
+      this.translationService.translate('loader.developer'),
+      this.translationService.translate('loader.fullstack')
+    ];
     const tl = gsap.timeline({
       onComplete: () => {
         gsap.to(".loader", {

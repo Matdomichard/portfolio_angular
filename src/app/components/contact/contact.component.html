@@ -1,38 +1,20 @@
-<div id="contact" class="contact">
-  <h2>Contact</h2>
+<div class="contact" id="contact">
+  <h2>{{ 'contact.title' | translate }}</h2>
   <form (submit)="sendEmail($event)" #contactForm="ngForm">
     <div class="form-group">
-      <label for="name">Name</label>
-      <input
-        type="text"
-        id="name"
-        required
-        [(ngModel)]="contact.name"
-        name="name"
-        #name="ngModel"
-      />
+      <label for="name">{{ 'contact.name' | translate }}</label>
+      <input type="text" id="name" required [(ngModel)]="contact.name" name="name" #name="ngModel" />
     </div>
     <div class="form-group">
-      <label for="email">Email</label>
-      <input
-        type="email"
-        id="email"
-        required
-        [(ngModel)]="contact.email"
-        name="email"
-        #email="ngModel"
-      />
+      <label for="email">{{ 'contact.email' | translate }}</label>
+      <input type="email" id="email" required [(ngModel)]="contact.email" name="email" #email="ngModel" />
     </div>
     <div class="form-group">
-      <label for="message">Message</label>
-      <textarea
-        id="message"
-        required
-        [(ngModel)]="contact.message"
-        name="message"
-        #message="ngModel"
-      ></textarea>
+      <label for="message">{{ 'contact.message' | translate }}</label>
+      <textarea id="message" required [(ngModel)]="contact.message" name="message" #message="ngModel"></textarea>
     </div>
-    <button type="submit" [disabled]="!contactForm.form.valid">Send</button>
+    <button type="submit" [disabled]="!contactForm.form.valid">
+      {{ 'contact.send' | translate }}
+    </button>
   </form>
 </div>

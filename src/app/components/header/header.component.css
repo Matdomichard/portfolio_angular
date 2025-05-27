@@ -58,3 +58,22 @@
     display: none;
   }
 }
+
+
+.language-switcher {
+  cursor: pointer;
+  padding-left: 5px;
+  border-radius: 50%;
+  transition: transform 0.1s ease;
+}
+
+.language-switcher:hover {
+  transform: scale(1.1);
+}
+
+.flag-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+}

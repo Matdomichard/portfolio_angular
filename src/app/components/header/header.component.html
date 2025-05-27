@@ -1,6 +1,11 @@
-<div class="floating-menu" id="floating_header">
-  <a href="#bio" class="menu_box menu_intro">INTRO</a>
-  <!-- <a href="#session" class="menu_box menu_session">SESSION</a> -->
-  <a href="#projects" class="menu_box menu_timetable">PROJECTS</a>
-  <a href="#contact" class="menu_box menu_about">CONTACT</a>
+<div class="floating-menu">
+  <a href="#bio" class="menu_box menu_intro">{{ 'header.intro' | translate }}</a>
+  <a href="#projects" class="menu_box menu_timetable">{{ 'header.projects' | translate }}</a>
+  <a href="#contact" class="menu_box menu_about">{{ 'header.contact' | translate }}</a>
+  
+  <!-- Language Switcher -->
+  <div class="language-switcher" (click)="toggleLanguage()">
+    <span [class]="getFlagClass()"></span>
+    <span class="language-label">{{ translationService.getCurrentLanguage() === 'fr' ? 'FR' : 'EN' }}</span>
+  </div>
 </div>

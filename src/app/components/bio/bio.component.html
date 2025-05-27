@@ -1,14 +1,8 @@
-<div   class="bio-section">
+<div class="bio-section">
   <div class="circle" #circle>
     <div class="content" #content>
-      <h2 id="bio">Thank you for visiting my portfolio</h2>
-      <p>
-        Hi, I'm Mathieu, a full stack developer. My professional
-        experience is primarily in backend development, but I love the balance
-        between backend and frontend work. This portfolio, built with Angular,
-        showcases my frontend skills from personal projects. I enjoy recreating
-        designs and bringing ideas to life. Enjoy exploring my work!
-      </p>
+      <h2 id="bio">{{ 'bio.title' | translate }}</h2>
+      <p>{{ 'bio.description' | translate }}</p>
     </div>
     <div>
       <app-svg-card></app-svg-card>

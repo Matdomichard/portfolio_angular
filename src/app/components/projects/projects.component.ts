@@ -1,15 +1,15 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { TranslationService } from '../../services/translation.service';
 
 interface Projet {
   titre: string;
   imageUrl: string;
-  description: string;
+  descriptionKey: string; // Clé de traduction au lieu de description directe
   technologies: string[];
   lienSite?: string;
   lienDemo?: string;
-  // soit un lien unique (legacy), soit deux liens front/back
   lienCode?: string;
   lienCodeFront?: string;
   lienCodeBack?: string;
@@ -25,16 +25,15 @@ export class ProjectsComponent implements OnInit {
     {
       titre: 'Frequencies Tombola',
       imageUrl: 'https://res.cloudinary.com/dyx38qkbh/image/upload/f_auto,q_auto/v1/Portfolio/frequencies',
-      description: `Application de tombola numérique pour l'association Frequencies. Permet la gestion des participants, l'attribution des numéros et le tirage au sort en direct. Interface administrateur pour la gestion des lots et des participants.`,
+      descriptionKey: 'projects.frequencies.description',
       technologies: ["Angular", "Java", 'PostgreSQL', 'Docker'],
-      // on sépare front et back
       lienCodeFront: 'https://github.com/Matdomichard/frequencies-tombola-ui',
       lienCodeBack:  'https://github.com/Matdomichard/frequencies-tombola-api'
     },
     {
       titre: 'Codeur Nomade',
       imageUrl: 'https://res.cloudinary.com/dyx38qkbh/image/upload/v1698760398/Portfolio/codeurnomade.png',
-      description: `Le site codeurNomade est un outil gratuit aidant développeurs débutants ou reconvertis à trouver des opportunités en région selon langages informatiques demandés. Intégrant l'API Pôle Emploi, ce site favorise une répartition équilibrée des compétences en France.`,
+      descriptionKey: 'projects.codeurNomade.description',
       technologies: ['Vue.js', 'Axios', 'API France Travail'],
       lienSite: 'https://codeurnomade.vercel.app/',
       lienCode:  'https://github.com/Matdomichard/codeurnomade'
@@ -42,7 +41,7 @@ export class ProjectsComponent implements OnInit {
     {
       titre: 'Sleep Tracker',
       imageUrl: 'https://res.cloudinary.com/dyx38qkbh/image/upload/v1698760594/Portfolio/zzztracker.jpg',
-      description: `SleepTracker est une application web complète permettant aux utilisateurs de suivre facilement les jours restants avant un événement important ou un objectif personnel. Grâce à une interface intuitive, vous pouvez créer votre compte, enregistrer vos dates clés et visualiser en un coup d'œil le temps restant en jours, semaines, mois, années ou encore en nombre de nuits de sommeil.`,
+      descriptionKey: 'projects.sleepTracker.description',
       technologies: ["Angular", "Java", "Spring Boot", "PostgreSQL"],
       lienCodeFront: 'https://github.com/Matdomichard/zzztracker-frontend',
       lienCodeBack:  'https://github.com/Matdomichard/CompteArebours',
@@ -51,13 +50,16 @@ export class ProjectsComponent implements OnInit {
     {
       titre: 'Combating Childhood Obesity (CCO)',
       imageUrl: 'https://res.cloudinary.com/dyx38qkbh/image/upload/v1698762096/Portfolio/cco.png',
-      description: `V2 de l'application Combating Childhood Obesity réalisée au sein du Degetel Lab. Application européenne destinée à réduire l'obésité infantile.`,
+      descriptionKey: 'projects.cco.description',
       technologies: ['React Native'],
       lienDemo: 'https://www.loom.com/share/01ee4ed517674241a1ab35d3f2b086a7'
     }
   ];
 
-  constructor(private elementRef: ElementRef) {
+  constructor(
+    private elementRef: ElementRef,
+    private translationService: TranslationService
+  ) {
     gsap.registerPlugin(ScrollTrigger);
   }
 

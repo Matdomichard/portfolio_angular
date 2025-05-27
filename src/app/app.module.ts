@@ -12,6 +12,7 @@ import { TitleComponent } from './components/title/title.component';
 import { SvgCardComponent } from './components/svg-card/svg-card.component';
 import { BlobGroupComponent } from './components/blob-group/blob-group.component';
 import { ProjectsComponent } from './components/projects/projects.component';
+import { TranslatePipe } from './pipes/translate.pipe';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { ProjectsComponent } from './components/projects/projects.component';
     SvgCardComponent,
     BlobGroupComponent,
     ProjectsComponent,
+    TranslatePipe
   ],
   imports: [BrowserModule, BrowserAnimationsModule, FormsModule],
   providers: [],
